@@ -12,9 +12,9 @@ public class CriteriaChecker {
 
 
     /**
-     *
-     * @param password
-     * @return
+     *This creates boolean values that will be changed if the password meets certain criteria
+     * @param password The user entered password
+     * @return Feedback depending on criteria met
      */
     public static int evaluateCriteria(String password) {
         passwordLength = false;
