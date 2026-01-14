@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * This class tests whether the criteria checker functions properly
+ */
 public class CriteriaCheckerTest {
     @Test
     void testEvaluateCriteria() {

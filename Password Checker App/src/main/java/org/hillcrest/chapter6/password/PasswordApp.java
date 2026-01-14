@@ -2,6 +2,9 @@ package org.hillcrest.chapter6.password;
 
 import java.util.Scanner;
 
+/**
+ * Runs the code and checks if the password is valid or not and gives feedback
+ */
 public class PasswordApp {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

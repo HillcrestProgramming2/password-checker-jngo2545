@@ -1,8 +1,16 @@
 package org.hillcrest.chapter6.password;
 
+/**
+ * This class generates feedback based on the given strength of the given password
+ */
 public class FeedbackGenerator {
     //utility class for generating feedback based on password
 
+    /**
+     * This method will check which criteria are met with the inputted password and will give the associated feedback
+     * @param password the user inputted password
+     * @return the associated feedback
+     */
     public static String generateFeedback(String password) {
         boolean passwordLength = false;
         boolean hasUpper = false;
@@ -26,25 +34,25 @@ public class FeedbackGenerator {
 
             if (upperCase.contains(ch)) {
                 hasUpper = true;
-            } else if (lowerCase.contains(ch)) {
+            } if (lowerCase.contains(ch)) {
                 hasLower = true;
-            } else if (special.contains(ch)) {
+            } if (special.contains(ch)) {
                 hasSpecial = true;
-            } else if (number.contains(ch)) {
+            } if (number.contains(ch)) {
                 hasNumber = true;
             }
         }
 
 
-        if (hasUpper == false) {
+        if (!hasUpper) {
             feedback += "Add at least one uppercase letter\n";
-        } else if (hasLower == false){
+        } if (!hasLower){
             feedback += "Add at least one lowercase letter\n";
-        } else if (hasNumber == false){
+        } if (!hasNumber){
             feedback += "Add at least one number\n";
-        } else if (hasSpecial == false){
+        } if (!hasSpecial){
             feedback += "Add at least one special character\n";
-        } else if (passwordLength == false){
+        } if (!passwordLength){
             feedback += "Create a password with at least 8 letters\n";
         }
 

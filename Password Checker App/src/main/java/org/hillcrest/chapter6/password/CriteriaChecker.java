@@ -12,7 +12,7 @@ public class CriteriaChecker {
 
 
     /**
-     *This creates boolean values that will be changed if the password meets certain criteria
+     * This creates boolean values that will be changed if the password meets certain criteria
      * @param password The user entered password
      * @return Feedback depending on criteria met
      */
@@ -29,42 +29,61 @@ public class CriteriaChecker {
         String number = "0123456789";
         String special = "!@#$%^&*()-+=";
 
-        for(int i = 0; i < password.length(); i++){
+        for (int i = 0; i < password.length(); i++) {
 
             String ch = password.substring(i, i + 1);
 
-            if(upperCase.contains(ch)){
+            if (upperCase.contains(ch)) {
                 hasUpper = true;
-            } if (lowerCase.contains(ch)){
+            }
+            if (lowerCase.contains(ch)) {
                 hasLower = true;
-            } if (number.contains(ch)) {
+            }
+            if (number.contains(ch)) {
                 hasNumber = true;
-            } if (special.contains(ch)) {
+            }
+            if (special.contains(ch)) {
                 hasSpecial = true;
-            } if (password.length() >= 8) {
+            }
+            if (password.length() >= 8) {
                 passwordLength = true;
             }
         }
 
         int count = 0;
 
-        if(passwordLength == true) {count++;}
-        if(hasUpper == true) {count++;}
-        if(hasLower == true) {count++;}
-        if(hasNumber == true) {count++;}
-        if(hasSpecial == true) {count++;}
+        if (passwordLength == true) {
+            count++;
+        }
+        if (hasUpper == true) {
+            count++;
+        }
+        if (hasLower == true) {
+            count++;
+        }
+        if (hasNumber == true) {
+            count++;
+        }
+        if (hasSpecial == true) {
+            count++;
+        }
 
         return count;
     }
 
-    public static String determineStrength(int count){
+    /**
+     * This returns a strength value depending on count
+     * @param count value 1-5 depending on strength of the password
+     * @return a string that gives the strength weak, moderate, or strong
+     */
+    public static String determineStrength(int count) {
 
-        if(count <= 2){
+        if (count <= 2) {
             return ("0-2: Weak");
         } else if (count == 3) {
             return ("3: Moderate");
         } else {
-            return("4-5: Strong");
+            return ("4-5: Strong");
         }
     }
 }

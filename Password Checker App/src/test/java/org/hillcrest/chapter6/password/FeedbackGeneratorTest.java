@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * This class tests whether the feedback generator test works
+ */
 public class FeedbackGeneratorTest {
     @Test
     void testGenerateFeedback() {
